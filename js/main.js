@@ -1,3 +1,27 @@
+var diag_modal = document.getElementById('diag');
+var diag_span = document.getElementsByClassName("diag_close")[0];
+var diag_btn = document.getElementById("src_code");
+
+//displaying the modal
+diag_modal.style.display = "block";
+
+// When the user clicks on (x), close the modal
+diag_span.onclick = function() {
+    diag_modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == diag_modal) {
+        diag_modal.style.display = "none";
+    }
+}
+
+document.getElementById("diag_btn_close").onclick = function () {
+     diag_modal.style.display = "none";
+}
+
+
 //PREVIEW MODAL
 var modal = document.getElementById('myModal');
 var btn = document.getElementById("myBtn");
@@ -16,32 +40,7 @@ window.onclick = function(event) {
 }
 //END OF PREVIEW MODAL
 
-//SETTING MODAL
-var settings_modal = document.getElementById('settings_modal');
-var settings_btn = document.getElementById("set-btn");
-var settings_span = document.getElementsByClassName("setting_close")[0];
-var save_btn = document.getElementById("save");
 
-     //Editor
-var editor = document.getElementById('editor');
-
-//Getting value from user
-settings_btn.onclick = function() {
-    settings_modal.style.display = "block";
-}
-settings_span.onclick = function() {
-    settings_modal.style.display = "none";
-}
-var font = document.getElementById("font_size");
-save_btn.onclick = function() {
-    settings_modal.style.display = "none";
-}
-window.onclick = function(event) {
-    if (event.target == settings_modal) {
-       settings_modal.style.display = "none";
-    }
-}
-//END OF SETTING MODAL
 
 //Tab no-escape
 var textareas = document.getElementsByTagName('textarea');

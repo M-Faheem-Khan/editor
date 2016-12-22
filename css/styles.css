@@ -38,7 +38,7 @@ body{
 }
 
 /* The Close Button */
-.close {
+.close, .diag_close {
     color: #aaaaaa;
     float: right;
     font-size: 30px;
@@ -47,6 +47,8 @@ body{
 }
 
 .close:hover,
+.diag_close:hover,
+.diag_close:focus,
 .close:focus {
     color: #000;
     text-decoration: none;
@@ -76,7 +78,7 @@ body{
 }
 
 
-#myBtn{
+#myBtn, #src_code, #diag_btn_close, #copy-btn{
      height:25px;
      width: 60px;
      background: #ffffff;
@@ -85,87 +87,20 @@ body{
      margin-left: 5px;
 }
 
-#myBtn:focus{
+#src_code{
+     width: 120px;
+     margin-left: 0px;
+}
+
+#copy-btn:active,
+#diag_btn_close:active,
+#src_code:active,
+#myBtn:active{
      background:rgb(230, 55, 55);
      color: #ffffff;
 }
 
-#set-btn{
-     height:25px;
-     width: 60px;
-     background: #ffffff;
-     border: 1px solid #282C35;
-     border-radius: 3px;
-     margin-left: 5px;
-}
 
-#set-btn:focus{
-     background:rgb(230, 55, 55);
-     color: #ffffff;
-}
-
-/* The Setting Modal (background) */
-.modal_settings {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-    -webkit-animation-name: fadeIn; /* Fade in the background */
-    -webkit-animation-duration: 0.4s;
-    animation-name: fadeIn;
-    animation-duration: 0.4s
-}
-
-/* Modal Content */
-.modal-content_setting {
-    position: fixed;
-    bottom: 0;
-    background-color: #efefef;
-    width: 100%;
-    -webkit-animation-name: slideIn;
-    -webkit-animation-duration: 0.4s;
-    animation-name: slideIn;
-    animation-duration: 0.4s
-}
-
-/* The Close Button */
-.setting_close {
-    color: white;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.setting_close:hover,
-.setting_close:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.modal-header_setting {
-    padding: 2px 16px;
-    background-color: #3f86da;
-    color: white;
-}
-
-.modal-body_setting {
-     padding: 2px 16px;
-     background: rgb(255, 255, 255)
-}
-
-.modal-footer_setting {
-     float:right;
-     padding: 2px 16px;
-     background-color: #3f86da;
-     color: white;
-}
 
 /* Add Animation */
 @-webkit-keyframes slideIn {

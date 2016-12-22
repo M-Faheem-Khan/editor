@@ -123,32 +123,6 @@ body{
     to {opacity: 1}
 }
 
-.spacer{
-     color: transparent;
-     margin-top: 10px;
-     height:20px;
-}
-
-#save{
-     height:25px;
-     width: 60px;
-     background: #ffffff;
-     border: 1px solid #282C35;
-     border-radius: 3px;
-     margin-left: 5px;
-}
-
-#save:hover{
-     background: rgb(230, 55, 55);
-     color: #efefef;
-     border: 1px solid #efefef;
-}
-
-#save:focus{
-     background:rgb(230, 55, 55);
-     color: #ffffff;
-}
-
 .loader {
      border: 3px solid #f3f3f3;
      border-radius: 50%;

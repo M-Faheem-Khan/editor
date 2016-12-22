@@ -1,0 +1,5 @@
+var editor = document.getElementById('editor');
+
+editor.onkeyup = editor.onkeypress = function(){
+    document.getElementById('preview').innerHTML = this.value;
+}​

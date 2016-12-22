@@ -8,10 +8,23 @@
           <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes"/>
           <meta name="generator" content="HTML editor">
           <link rel="stylesheet" type="text/css" href="css/styles.css"/>
-          <script type="text/javascript" src="font.js"></script>
+          <script type="text/javascript" src="js/font.js"></script>
 
      </head>
      <body>
+          <!--Disclamer-->
+          <div id="diag" class="modal">
+               <!-- Modal content -->
+               <div class="modal-content">
+                    <span class="diag_close">&times;</span>
+                    <h2>Impotant</h2>
+                    <p>This site is in <strong>Beta</strong>.<p>
+                    <br/>
+                    <button id="src_code" onclick="window.location.href='https://github.com/realmagicalunicorn/editor'">Source Code</button>
+                    <button id="diag_btn_close">Close</button>
+               </div>
+          </div>
+
           <!-- Preview Modal-->
           <div id="myModal" class="modal">
                <div class="modal-content">
@@ -20,44 +33,15 @@
                </div>
           </div>
 
-          <!--Setting Modal-->
-          <div id="settings_modal" class="modal">
-
-            <!-- Modal content -->
-            <div class="modal-content_setting">
-              <div class="modal-header_setting">
-                <span class="setting_close">&times</span>
-                <h2 style="font-family: 'Inconsolata';">Settings</h2>
-              </div>
-              <div class="modal-body_setting">
-                   <span class="spacer">_</span>
-                   <h4>Indent</h4>
-                   <p>Change how many spaces are added when TAB is pressed</p>
-                   <input type="number" id="indentation" max="10" min="2" value="5"/>
-                   <br/>
-                   <span class="spacer">_</span>
-                   <hr/>
-                   <span class="spacer">_</span>
-                   <h4>Font size</h4>
-                   <p>Change font size</p>
-                   <input type="number" id="font_size" min="14" max="100" value="14"/>
-                   <button id="save" onclick="call();">Close</button>
-              </div>
-              <div class="modal-footer_setting">
-                <!--<h4>Add something in the footer</h4>-->
-              </div>
-            </div>
-          </div>
-
           <textarea name="editor" id="editor" placeholder="Happy coding :)" onkeyup="document.getElementById('preview').innerHTML = this.value" autofocus="True" rows="40" cols="174"></textarea>
           <div class="bar">
                <button id="myBtn">Preview</button>
-               <button id="set-btn">Settings</button>
-               <button id="save">Save</button>
+               <button id="copy-btn">Copy</button>
                <div class="loader"></div>
           </div>
 
           <script src="js/main.js"></script>
           <script src="js/live_preview.js"></script>
+          <script src="js/copy.js"></script>
 </body>
 </html>

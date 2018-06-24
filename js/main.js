@@ -1,57 +1,57 @@
-var diag_modal = document.getElementById('diag');
-var diag_span = document.getElementsByClassName("diag_close")[0];
-var diag_btn = document.getElementById("src_code");
+// shows the modal on page load
+$( document ).ready(function() {
+  if (document.cookie.indexOf('visited=true') == -1){
+    // load the overlay
+    $('#myModal').modal({show:true});
 
-//displaying the modal
-diag_modal.style.display = "block";
+    var year = 1000*60*60*24*365;
+    var expires = new Date((new Date()).valueOf() + year);
+    document.cookie = "visited=true;expires=" + expires.toUTCString();
 
-// When the user clicks on (x), close the modal
-diag_span.onclick = function() {
-    diag_modal.style.display = "none";
+  }
+});
+
+
+
+// setting the title of the tab on document title change
+function change_title(){
+     // getting element
+     var document_title = document.getElementById("document_title");
+      // if length of the title is 0
+      // set the the title to 0
+      // otherwise set it to document
+     if (document_title.value == 0){
+          document.title = "Untitled Document";
+     } else {
+          document.title = document_title.value;
+     }
 }
 
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == diag_modal) {
-        diag_modal.style.display = "none";
-    }
+// This Function is run when body is resized or when the page is loaded
+// setting the height and width of the textarea
+// so,it matches the height and width of the screen
+function adjust_textarea(){
+     // getting the inner height and width of the window
+     var width = window.innerWidth;
+     var height = window.innerHeight;
+     // getting the textarea
+     var textarea = document.getElementById("editor");
+     // setting the attributes
+     textarea.setAttribute("rows", height);
+     textarea.setAttribute("cols", width);
 }
 
-document.getElementById("diag_btn_close").onclick = function () {
-     diag_modal.style.display = "none";
+// This function dims the textarea when input is in onfocus and vice versa
+function dim_other(current_element_id, element_id){
+     var out_of_focus_element = document.getElementById(element_id);
+     var in_focus_element = document.getElementById(current_element_id);
+     // changing the styles of the out of focus elements
+     out_of_focus_element.style.background = "rgb(235, 235, 235)";
+     out_of_focus_element.style.color = "#464646";
+     // changing the styles of the element in focus
+     in_focus_element.style.background = "white";
+     in_focus_element.style.color = "#111111";
 }
 
-
-//PREVIEW MODAL
-var modal = document.getElementById('myModal');
-var btn = document.getElementById("myBtn");
-var span = document.getElementsByClassName("close")[0];
-
-btn.onclick = function() {
-   modal.style.display = "block";
-}
-span.onclick = function() {
-   modal.style.display = "none";
-}
-window.onclick = function(event) {
-   if (event.target == modal) {
-       modal.style.display = "none";
-   }
-}
-//END OF PREVIEW MODAL
-
-
-
-//Tab no-escape
-var textareas = document.getElementsByTagName('textarea');
-var count = textareas.length;
-for(var i=0;i<count;i++){
-    textareas[i].onkeydown = function(e){
-       if(e.keyCode==9 || e.which==5){
-            e.preventDefault();
-            var s = this.selectionStart;
-            this.value = this.value.substring(0,this.selectionStart) + "\t" + this.value.substring(this.selectionEnd);
-            this.selectionEnd = s+1;
-       }
-    }
-}
+// initializing the model when script loads so the textarea fits the screen
+adjust_textarea();

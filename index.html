@@ -1,47 +1,58 @@
 <!DOCTYPE html>
 <html>
      <head>
-          <title>HTML editor</title>
+          <title>Untitled Document</title>
           <meta charset="utf-8">
           <meta name="description" content="HTML editor">
           <meta name="keywords" content="HTML editor">
           <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes"/>
           <meta name="generator" content="HTML editor">
           <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+          <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
           <script type="text/javascript" src="js/font.js"></script>
-
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+          <script src="js/jquery.min.js"></script>
+          <!-- <script src="js/modal.js"></script> -->
      </head>
-     <body>
-          <!--Disclamer-->
-          <div id="diag" class="modal">
-               <!-- Modal content -->
-               <div class="modal-content">
-                    <span class="diag_close">&times;</span>
-                    <h2>Impotant</h2>
-                    <p>This site is in <strong>Beta</strong>.<p>
+     <body onresize="adjust_textarea()" onload="show_modal()">
+          <!-- Modal box requesting email -->
+          <!-- Modal -->
+          <div id="myModal" class="modal fade" role="dialog">
+               <div class="modal-dialog"><!-- Modal content-->
+                    <div class="modal-content">
+                         <div class="modal-header">
+                              <button type="button" class="close" data-dismiss="modal">&times;</button>
+                              <h4 class="modal-title">About this project</h4>
+                         </div>
+
+                         <div class="modal-body">
+                              <div class="row">
+                                   <div class="container">
+                                        <p>This project was inspired by grammarly. The aim of this project is to use artifical inteligence model to create an online editor that can remove errors from text, fix gramatical errors, suggest synonyms and rephrasing sentences.</p>
+                                        <p>View on <a href="https://github.com/M-Faheem-Khan/editor/">Github</a></p>
+                                   </div>
+                              </div>
+
+                         </div>
+                         <!--<div class="modal-footer">
+                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                         </div>-->
+                    </div>
+
+               </div>
+          </div>
+          <!-- The document title and editor -->
+          <div class="fit_center">
+               <center>
+                    <input id="document_title" onfocus="dim_other('document_title', 'editor')" onchange="change_title();" type="text" placeholder="Enter title of Document" autofocus/>
                     <br/>
-                    <button id="src_code" onclick="window.location.href='https://github.com/realmagicalunicorn/editor'">Source Code</button>
-                    <button id="diag_btn_close">Close</button>
-               </div>
+                    <textarea id="editor" onfocus="dim_other('editor', 'document_title')" cols="150" rows="30" placeholder="Paste (CTRL + V) or Start writing.." wrap="hard"></textarea>
+               </center>
           </div>
 
-          <!-- Preview Modal-->
-          <div id="myModal" class="modal">
-               <div class="modal-content">
-                    <span class="close">&times</span>
-                    <div id="preview"></div>
-               </div>
-          </div>
-
-          <textarea name="editor" id="editor" placeholder="Happy coding :)" onkeyup="document.getElementById('preview').innerHTML = this.value" autofocus="True" rows="40" cols="174"></textarea>
-          <div class="bar">
-               <button id="myBtn">Preview</button>
-               <button id="copy-btn">Copy</button>
-               <div class="loader"></div>
-          </div>
-
-          <script src="js/main.js"></script>
-          <script src="js/live_preview.js"></script>
-          <script src="js/copy.js"></script>
+          <script src="js/bootstrap.min.js"></script>
+          <script src="js/bootstrap.min.js"></script>
+          <script src="js/main.js"></script> <!--Main Functions-->
+          <!-- <script src="js/copy.js"></script> <!- - Copy selected data to clipboard-->
 </body>
 </html>

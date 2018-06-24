@@ -5,10 +5,10 @@ copyTextareaBtn.addEventListener('click', function(event) {
      copyTextarea.select();
 
      try {
+          // copy successful
           var successful = document.execCommand('copy');
-          var msg = successful ? 'successful' : 'unsuccessful';
-          console.log('Copying text command was ' + msg);
      } catch (err) {
-          console.log('Oops, unable to copy');
+          // copy failed
+          // console.log('Oops, unable to copy');
      }
 });

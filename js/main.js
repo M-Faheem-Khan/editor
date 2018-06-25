@@ -1,14 +1,9 @@
 // shows the modal on page load
 $( document ).ready(function() {
-  if (document.cookie.indexOf('visited=true') == -1){
-    // load the overlay
-    $('#myModal').modal({show:true});
-
-    var year = 1000*60*60*24*365;
-    var expires = new Date((new Date()).valueOf() + year);
-    document.cookie = "visited=true;expires=" + expires.toUTCString();
-
-  }
+     if (document.cookie.indexOf('visited=true') == -1){
+          // load the overlay
+          $('#myModal').modal({show:true});
+     }
 });
 
 
@@ -28,18 +23,12 @@ function change_title(){
 }
 
 // This Function is run when body is resized or when the page is loaded
-// setting the height and width of the textarea
-// so,it matches the height and width of the screen
-function adjust_textarea(){
-     // getting the inner height and width of the window
-     var width = window.innerWidth;
-     var height = window.innerHeight;
-     // getting the textarea
-     var textarea = document.getElementById("editor");
-     // setting the attributes
-     textarea.setAttribute("rows", height);
-     textarea.setAttribute("cols", width);
-}
+// sets the height and width of the textarea to the scroll height of the window
+$("#editor").on('load', function() {
+	var scroll_height = $("#editor").get(0).scrollHeight;
+	$("#editor").css('height', scrollHeight + 'px');
+});
+// }
 
 // This function dims the textarea when input is in onfocus and vice versa
 function dim_other(current_element_id, element_id){
@@ -52,6 +41,3 @@ function dim_other(current_element_id, element_id){
      in_focus_element.style.background = "white";
      in_focus_element.style.color = "#111111";
 }
-
-// initializing the model when script loads so the textarea fits the screen
-adjust_textarea();

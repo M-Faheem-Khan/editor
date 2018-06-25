@@ -19,13 +19,14 @@ body{
 input{
      height: 35px;
      width: 100%;
-     padding: 7px;
+     padding: 13px;
      border: 0px;
+     text-align: center;
 }
 
 textarea {
      resize: none;
-     padding: 7px;
+     padding: 13px;
      border: 0px;
 }
 
@@ -37,4 +38,10 @@ textarea {
 .modal-title{
      position: absolute;
      text-align: left;
+}
+
+#train_button{
+     position: fixed;
+     right: 10px;
+     bottom: 10px;
 }

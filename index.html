@@ -14,7 +14,7 @@
           <script src="js/jquery.min.js"></script>
           <!-- <script src="js/modal.js"></script> -->
      </head>
-     <body onresize="adjust_textarea()" onload="show_modal()">
+     <body>
           <!-- Modal box requesting email -->
           <!-- Modal -->
           <div id="myModal" class="modal fade" role="dialog">
@@ -34,13 +34,13 @@
                               </div>
 
                          </div>
-                         <!--<div class="modal-footer">
-                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                         </div>-->
+                         <div class="modal-footer">
+                              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                         </div>
                     </div>
-
                </div>
           </div>
+
           <!-- The document title and editor -->
           <div class="fit_center">
                <center>
@@ -50,9 +50,38 @@
                </center>
           </div>
 
+          <!-- Modal displaying stats about the document -->
+          <div id="analyze_modal" class="modal fade" role="dialog">
+               <div class="modal-dialog"><!-- Modal content-->
+                    <div class="modal-content">
+                         <div class="modal-header">
+                              <button type="button" class="close" data-dismiss="modal">&times;</button>
+                              <h5 class="modal-title">Stats</h5>
+                         </div>
+
+                         <div class="modal-body">
+                              <div class="row">
+                                   <div class="container">
+                                        <p>Words: <span id="words" class="btn btn-primary"></span></p>
+                                        <p>Sentences: <span id="sentences" class="btn btn-primary"></span></p>
+                                   </div>
+                              </div>
+
+                         </div>
+                         <div class="modal-footer">
+                              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                         </div>
+                    </div>
+               </div>
+          </div>
+
+          <!-- Train button -->
+          <button id="train_button" type="button" class="btn btn-primary" onclick="analyze()" value="Train">Train</button>
+
           <script src="js/bootstrap.min.js"></script>
           <script src="js/bootstrap.min.js"></script>
-          <script src="js/main.js"></script> <!--Main Functions-->
+          <script src="js/main.js"></script> <!-- Main Functions -->
+          <script src="js/train.js"></script> <!-- Train Model on Data-->
           <!-- <script src="js/copy.js"></script> <!- - Copy selected data to clipboard-->
 </body>
 </html>

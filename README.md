@@ -11,14 +11,15 @@ This project was inspired by grammarly. The aim of this project is to use artifi
 - optimize the model
 - make the model compact so it is less than 40mb
 
-Libraries:
+# Libraries:
 - Jquery
 - Bootstrap 4
 - Popper.js
 - Tensorflow.js
 
 
-Demo:
+# Demo:
 https://m-faheem-khan.github.io/editor/
 
-Lisence: MIT
+# Lisence
+MIT
